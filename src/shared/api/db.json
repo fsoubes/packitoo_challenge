@@ -1,0 +1,46 @@
+{
+  "briefs": [
+    {
+      "id": 1,
+      "title": "Round box for wine",
+      "comment": "I need 1000 round boxes",
+      "productId": 3
+    },
+    {
+      "id": 2,
+      "title": "Beautiful bag Box",
+      "comment": "Beautiful bag Box with a cord",
+      "productId": 1
+    },
+    {
+      "title": "hawai",
+      "comment": "dsqd",
+      "productId": 0,
+      "id": 3
+    },
+    {
+      "title": "Weather is bad",
+      "comment": "Not so much",
+      "productId": 0,
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Bag Box"
+    },
+    {
+      "id": 2,
+      "name": "Oval Box"
+    },
+    {
+      "id": 3,
+      "name": "Round Box"
+    },
+    {
+      "id": 4,
+      "name": "Other Box"
+    }
+  ]
+}
