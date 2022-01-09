@@ -1,10 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { url } from "../constants/url";
-import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
-
-const briefsAdapter = createEntityAdapter();
-
-const initialState = briefsAdapter.getInitialState();
 
 export interface Brief {
   id: number;
@@ -67,22 +62,11 @@ export const apiSlice = createApi({
 });
 
 // Add some slowness to requests
-const sleep = (time: number) => new Promise((res) => setTimeout(res, time));
+export const sleep = (time: number) =>
+  new Promise((res) => setTimeout(res, time));
 
 export const {
   useGetBriefsQuery,
   useGetBriefQuery,
   useAddBriefMutation,
 } = apiSlice;
-
-// export const selectBriefResult = apiSlice.endpoints.getBriefs.select();
-
-// const selectBriefData = createSelector(
-//   selectBriefResult,
-//   (briefsResult) => briefsResult.data
-// );
-
-// export const {
-//   selectAll: selectAllBriefs,
-//   selectById: selectBriefByProductId,
-// } = briefsAdapter.getSelectors((state) => selectBriefData(state as any) ?? initialState as any)

@@ -55,7 +55,7 @@ const BriefForm: React.FC<BriefFormProps> = ({}) => {
               await addPost({
                 title,
                 comment,
-                productId: product ? parseInt(product) : 0,
+                productId: product ? parseInt(product) + 1 : 1,
               });
               resetForm();
             }

@@ -29,40 +29,19 @@ const BriefList: React.FC<BriefListProps> = ({}) => {
   // Filtering Posts with selector and userIds
   // RTK Query not a normalized cache / Document cache
 
-  // const selectPostsForUser = useMemo(() => {
-  //   // Return a unique selector instance for this page so that
-  //   // the filtered results are correctly memoized
-  //   return createSelector(
-  //     (res) => res.data,
-  //     (res, productId) => productId,
-  //     (data: any[], productId) =>
-  //       data.filter((post) => brief.productId === productId)
-  //   );
-  // }, []);
-
-  // // Use the same posts query, but extract only part of its data
-  // const { briefsForProdut } = useGetBriefsQuery(undefined, {
-  //   selectFromResult: (res) => ({
-  //     ...res,
-  //     // Include a field called `postsForUser` in the hook result object,
-  //     // which will be filtered list of posts
-  //     briefsForProduct: selectPostsForUser(res, productId),
-  //   }),
-  // });
-
   const handleChange = (event: SelectChangeEvent) => {
     setSelectedId(event.target.value as string);
   };
 
   const briefList = briefs.map(
     ({ title, comment, productId, id }, index: number) =>
-      parseInt(selectedId) === productId || selectedId === "" ? (
+      parseInt(selectedId) === productId - 1 || selectedId === "" ? (
         <BriefItem
           key={index}
           id={id}
           title={title}
           comment={comment}
-          productname={product[productId].name}
+          productname={product[productId - 1].name}
         />
       ) : null
   );
@@ -74,7 +53,27 @@ const BriefList: React.FC<BriefListProps> = ({}) => {
       style={{ display: "flex", justifyContent: "space-around", width: "100%" }}
     >
       <div>
-        <h2>Briefs</h2>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <h2>Briefs</h2>
+          <button
+            onClick={() => setSelectedId("")}
+            style={{
+              maxHeight: "20px",
+              backgroundColor: "transparent",
+              border: "none",
+              cursor: "pointer",
+              color: "red",
+            }}
+          >
+            Clear
+          </button>
+        </div>
         <div>
           <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth>

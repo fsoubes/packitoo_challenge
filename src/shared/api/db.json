@@ -13,16 +13,22 @@
       "productId": 1
     },
     {
-      "title": "hawai",
-      "comment": "dsqd",
-      "productId": 0,
+      "title": "test",
+      "comment": "test",
+      "productId": 1,
       "id": 3
     },
     {
-      "title": "Weather is bad",
-      "comment": "Not so much",
-      "productId": 0,
+      "title": "toiast",
+      "comment": "toast",
+      "productId": 4,
       "id": 4
+    },
+    {
+      "title": "dqs",
+      "comment": "dsq",
+      "productId": 1,
+      "id": 5
     }
   ],
   "products": [
